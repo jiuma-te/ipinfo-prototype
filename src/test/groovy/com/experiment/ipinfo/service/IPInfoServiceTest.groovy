@@ -9,7 +9,8 @@ class IPInfoServiceTest extends Specification {
         given:
         def location = Resources.getResource("ip-ranges.json").toString()
         System.out.println("location = " + location);
-        IPInfoService service = new IPInfoService(location)
+        def geoIpLocation = Resources.getResource("geo-ip-feed.csv").toString()
+        IPInfoService service = new IPInfoService(location, geoIpLocation)
         when:
         service.init()
         then:

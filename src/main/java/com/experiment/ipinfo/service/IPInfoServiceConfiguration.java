@@ -6,12 +6,15 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class IPInfoServiceConfiguration {
-    @Value("${ip-ranges-location}")
-    private String location;
+    @Value("${provider.cloud.aws.ip-ranges-url}")
+    private String ipRangesURL;
+
+    @Value("${provider.cloud.aws.geo-ip-feed}")
+    private String geoIPFeedURL;
 
     @Bean
     public IPInfoService ipInfoService() {
-        return new IPInfoService(location);
+        return new IPInfoService(ipRangesURL, geoIPFeedURL);
     }
 
     @Bean

@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 
-public class IPRangesParser implements DataParser<IPRanges> {
+public class IPRangesParser implements StringParser<IPRanges> {
     @Override
     public IPRanges parse(String data) throws IOException {
         return new ObjectMapper().readValue(data, IPRanges.class);

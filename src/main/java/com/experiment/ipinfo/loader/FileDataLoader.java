@@ -10,7 +10,7 @@ public class FileDataLoader extends DataLoader {
     }
 
     @Override
-    protected InputStream getDataStream() throws IOException {
+    protected InputStream openStream() throws IOException {
         return new FileInputStream(location);
     }
 }

@@ -12,7 +12,7 @@ public class URLDataLoader extends DataLoader {
         super(location);
     }
 
-    protected InputStream getDataStream() throws IOException {
+    protected InputStream openStream() throws IOException {
         return new URL(location).openStream();
     }
 }
