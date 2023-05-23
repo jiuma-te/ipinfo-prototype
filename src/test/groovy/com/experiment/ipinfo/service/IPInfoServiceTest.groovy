@@ -8,7 +8,7 @@ class IPInfoServiceTest extends Specification {
     def 'search tree should be load from location'() {
         given:
         def location = Resources.getResource("ip-ranges.json").toString()
-        System.out.println("location = " + location);
+        System.out.println("location = " + location)
         def geoIpLocation = Resources.getResource("geo-ip-feed.csv").toString()
         IPInfoService service = new IPInfoService(location, geoIpLocation)
         when:
